@@ -22,7 +22,7 @@ const Register = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      await axios.post('https://apsonaassignment9457.onrender.com/api/auth/register', formData);
+      await axios.post('https://google-notes99.onrender.com/api/auth/register', formData);
       navigate('/login');
     } catch (error) {
       if (error.response && error.response.data) {

@@ -18,7 +18,7 @@ const Notes = () => {
   const fetchNotes = async () => {
     setLoading(true);
     const token = Cookies.get('token');
-    const res = await axios.get('https://apsonaassignment9457.onrender.com/api/notes', {
+    const res = await axios.get('https://google-notes99.onrender.com/api/notes', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setNotes(res.data);
@@ -28,7 +28,7 @@ const Notes = () => {
 
   const fetchArchivedNotes = async () => {
     const token = Cookies.get('token');
-    const res = await axios.get('https://apsonaassignment9457.onrender.com/api/notes/archived', {
+    const res = await axios.get('https://google-notes99.onrender.com/api/notes/archived', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setArchivedNotes(res.data);
@@ -36,7 +36,7 @@ const Notes = () => {
 
   const fetchTrashedNotes = async () => {
     const token = Cookies.get('token');
-    const res = await axios.get('https://apsonaassignment9457.onrender.com/api/notes/trashed', {
+    const res = await axios.get('https://google-notes99.onrender.com/api/notes/trashed', {
       headers: { Authorization: `Bearer ${token}` },
     });
     setTrashedNotes(res.data);
@@ -52,7 +52,7 @@ const Notes = () => {
   const handleEditNote = async (id, updatedNoteData) => {
     try {
       const token = Cookies.get('token');
-      const res = await axios.put(`https://apsonaassignment9457.onrender.com/api/notes/${id}`, updatedNoteData, {
+      const res = await axios.put(`https://google-notes99.onrender.com/api/notes/${id}`, updatedNoteData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes((prevNotes) =>
@@ -84,7 +84,7 @@ const Notes = () => {
 */
   const handleArchive = async (id) => {
     const token = Cookies.get('token');
-    await axios.put(`https://apsonaassignment9457.onrender.com/api/notes/${id}/archive`, null, {
+    await axios.put(`https://google-notes99.onrender.com/api/notes/${id}/archive`, null, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchNotes();
@@ -94,7 +94,7 @@ const Notes = () => {
 
   const handleTrash = async (id) => {
     const token = Cookies.get('token');
-    await axios.put(`https://apsonaassignment9457.onrender.com/api/notes/${id}/trash`, null, {
+    await axios.put(`https://google-notes99.onrender.com/api/notes/${id}/trash`, null, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchNotes();
@@ -105,7 +105,7 @@ const Notes = () => {
   const handleCreateNote = async (newNoteData) => {
     try {
       const token = Cookies.get('token');
-      const res = await axios.post('https://apsonaassignment9457.onrender.com/api/notes', newNoteData, {
+      const res = await axios.post('https://google-notes99.onrender.com/api/notes', newNoteData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes((prevNotes) => [...prevNotes, res.data]);

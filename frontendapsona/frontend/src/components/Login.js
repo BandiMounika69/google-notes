@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const res = await axios.post('https://apsonaassignment9457.onrender.com/api/auth/login', formData);
+      const res = await axios.post('https://google-notes99.onrender.com/api/auth/login', formData);
       const token = res.data.token;
       localStorage.setItem('token', token);
       Cookies.set('token', token, { expires: 7 }); // Set token in cookie with 7 days expiry
